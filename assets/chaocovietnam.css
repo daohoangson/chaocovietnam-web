@@ -1,0 +1,219 @@
+body {
+	font-family: Arial, Georgia;
+	margin: 0;
+}
+h2 {
+	color: #F00;
+	font-size: 35px;
+	margin: 0;
+	padding: 12px 0 5px 0;
+}
+.warning {
+	color: #AAA;
+	font-size: 0.8em;
+}
+.message {
+	margin: 10px 0;
+}
+#debug {
+	background-color: #000;
+	color: #FFF;
+	font-weight: bold;
+	text-align: center;
+}
+#above_content {
+	margin: 0;
+	padding: 0;
+}
+#content {
+	width: 900px;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 0;
+}
+#below_content {
+	margin: 0;
+	padding: 0;
+}
+.left_image {
+	float: left;
+	margin: 1em 20px 1em 0;
+}
+.text {
+	margin: 40px 0 10px 0;
+	border-top: 15px solid #B00;
+}
+.nobar {
+	border: none;
+}
+.text p {
+	text-align: justify;
+}
+.source {
+	font-style: italic;
+}
+div.source {
+	padding-bottom: 10px;
+}
+.source a {
+	color: #00F;
+}
+div.download {
+	padding-bottom: 10px;
+}
+.download li {
+	display: block;
+}
+.download a {
+	background: url(icon-download.gif) top left no-repeat;
+	color: #00F;
+	height: 16px;
+	text-decoration: none;
+	padding-left: 24px;
+}
+.download a:hover {
+	background-position: 0 -32px;
+}
+a.copyright {
+	background: none;
+	color: #999;
+	font-size: 0.7em;
+	text-decoration: underline;
+	padding: 0;
+}
+.menu {
+	background-color: #B00;
+	display: block;
+	width: 100%;
+	height: 30px;
+	font-size: 0.8em;
+	margin: 0;
+	padding: 0;
+	border-top: 8px solid #AAA;
+}
+.menu li {
+	display: block;
+	float: right;
+	border-left: 1px solid #EA0002;
+}
+.menu a {
+	display: block;
+	background-color: #C00002;
+	color: #FF0;
+	text-decoration: none;
+	height: 30px;
+	line-height: 30px;
+	margin: 0 1px 0 1px;
+	padding: 0 5px 0 5px;
+}
+.menu a:hover {
+	background-color: #900;
+	color: #FF0;
+}
+.language  a {
+	color: #FFF;
+}
+.language a:hover {
+	color: #FFF;
+}
+.page_home #goto_home, .page_flag #goto_flag, .page_anthem #goto_anthem, .page_coa #goto_coa 
+, .page_translate #goto_translate {
+	background-color: #AAA;
+	color: #900;
+	font-weight: bold;
+}
+#footer {
+	text-align: center;
+	font-size: 0.7em;
+	color: #767676;
+	padding-bottom: 10px;
+}
+#footer a {
+	color: #4272DB;
+	text-decoration: none;
+	margin: 0 10px 0 10px;
+}
+#footer a:hover {
+	text-decoration: underline;
+}
+/* Home */
+#primary {
+	text-align: center;
+}
+#flag {
+	display: block;
+	margin-top: 10px;
+	margin-left: auto;
+	margin-right: auto;
+}
+#anthem {
+	padding: 15px;
+}
+#anthem_lyrics {
+	text-align: center;
+}
+#anthem_lyrics div {
+	line-height: 150%;
+}
+.lyrics_over_flag {
+	color: #FFF;
+	font-size: 30px;
+}
+#subscribe_simple {
+	display: none;
+	background: url(btn-side.png) center right no-repeat;
+	width: 350px;
+	padding: 0 35px 0 0;
+}
+#subscribe_inner {
+	background-color: #FFF;
+	padding: 5px;
+	border-top: 2px solid #FF0;
+	border-bottom: 2px solid #FF0;
+	border-right: 2px solid #FF0;
+}
+#subscribe_simple h2 {
+	font-size: 25px;
+	margin: 0;
+	padding: 0;
+}
+#subscribe_simple .text {
+	margin: 0;
+	padding: 0;
+}
+#subscribe_simple input {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+#subscribe_simple input[type=text] {
+	width: 95%;
+}
+#social {
+	margin-top: 10px;
+}
+/* Translate */
+.translating {
+	font-size: 0.8em;
+}
+.phrase {
+	margin-bottom: 10px;
+}
+.needtranslation .original {
+	color: red;
+}
+.translated {
+	margin-left: 10px;
+}
+.translated textarea {
+	width: 100%;
+}
+.translating .button {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+/* Subscribe */
+#subscribe_form input {
+	font-size: 2em;
+}
