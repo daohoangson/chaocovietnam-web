@@ -22,7 +22,7 @@ $runtime = array(
 );
 
 // trick the url
-if ($config['debug'] && $_SERVER['HTTP_HOST'] != 'chaocovietnam.net') {
+if (!empty($config['debug']) OR $_SERVER['HTTP_HOST'] != 'chaocovietnam.net') {
 	$config['url'] = 'http://' . $_SERVER['HTTP_HOST'] . '/chaocovietnam/';
 }
 

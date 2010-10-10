@@ -61,19 +61,19 @@ div.source {
 div.download {
 	padding-bottom: 10px;
 }
-.download li {
-	display: block;
-}
-.download a {
-	background: url(icon-download.gif) top left no-repeat;
-	color: #00F;
-	height: 16px;
-	text-decoration: none;
-	padding-left: 24px;
-}
-.download a:hover {
-	background-position: 0 -32px;
-}
+	.download li {
+		display: block;
+	}
+	.download a {
+		background: url(icon-download.gif) top left no-repeat;
+		color: #00F;
+		height: 16px;
+		text-decoration: none;
+		padding-left: 24px;
+	}
+	.download a:hover {
+		background-position: 0 -32px;
+	}
 a.copyright {
 	background: none;
 	color: #999;
@@ -91,33 +91,35 @@ a.copyright {
 	padding: 0;
 	border-top: 8px solid #AAA;
 }
-.menu li {
-	display: block;
-	float: right;
-	border-left: 1px solid #EA0002;
+	.menu li {
+		display: block;
+		float: right;
+		border-left: 1px solid #EA0002;
+	}
+	.menu a {
+		display: block;
+		background-color: #C00002;
+		color: #FF0;
+		text-decoration: none;
+		height: 30px;
+		line-height: 30px;
+		margin: 0 1px 0 1px;
+		padding: 0 5px 0 5px;
+	}
+	.menu a:hover {
+		background-color: #900;
+		color: #FF0;
+	}
+.language {
 }
-.menu a {
-	display: block;
-	background-color: #C00002;
-	color: #FF0;
-	text-decoration: none;
-	height: 30px;
-	line-height: 30px;
-	margin: 0 1px 0 1px;
-	padding: 0 5px 0 5px;
-}
-.menu a:hover {
-	background-color: #900;
-	color: #FF0;
-}
-.language  a {
-	color: #FFF;
-}
-.language a:hover {
-	color: #FFF;
-}
+	.language  a {
+		color: #FFF;
+	}
+	.language a:hover {
+		color: #FFF;
+	}
 .page_home #goto_home, .page_flag #goto_flag, .page_anthem #goto_anthem, .page_coa #goto_coa 
-, .page_translate #goto_translate {
+, .page_translate #goto_translate, .page_badinh #goto_badinh {
 	background-color: #AAA;
 	color: #900;
 	font-weight: bold;
@@ -128,14 +130,14 @@ a.copyright {
 	color: #767676;
 	padding-bottom: 10px;
 }
-#footer a {
-	color: #4272DB;
-	text-decoration: none;
-	margin: 0 10px 0 10px;
-}
-#footer a:hover {
-	text-decoration: underline;
-}
+	#footer a {
+		color: #4272DB;
+		text-decoration: none;
+		margin: 0 10px 0 10px;
+	}
+	#footer a:hover {
+		text-decoration: underline;
+	}
 /* Home */
 #primary {
 	text-align: center;
@@ -159,6 +161,7 @@ a.copyright {
 	color: #FFF;
 	font-size: 30px;
 }
+/* Subscribe */
 #subscribe_simple {
 	display: none;
 	background: url(btn-side.png) center right no-repeat;
@@ -189,6 +192,9 @@ a.copyright {
 #subscribe_simple input[type=text] {
 	width: 95%;
 }
+#subscribe_form input {
+	font-size: 2em;
+}
 #social {
 	margin-top: 10px;
 }
@@ -213,7 +219,18 @@ a.copyright {
 	margin-left: auto;
 	margin-right: auto;
 }
-/* Subscribe */
-#subscribe_form input {
-	font-size: 2em;
+/* Ba Dinh */
+.embed {
+	text-align: center;
+}
+	.embed .goto {
+		color: #000;
+		font-weight: bold;
+		text-decoration: none;
+	}
+	.embed .switch {
+	}
+.metacafe .player {
+	margin-left: auto;
+	margin-right: auto;
 }

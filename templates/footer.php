@@ -14,6 +14,7 @@
 	<li><a id="goto_coa" href="<?php l('coa'); ?>"><?php p('Quốc huy'); ?></a></li>
 	<li><a id="goto_anthem" href="<?php l('anthem'); ?>"><?php p('Quốc ca'); ?></a></li>
 	<li><a id="goto_flag" href="<?php l('flag'); ?>"><?php p('Quốc kỳ'); ?></a></li>
+	<li><a id="goto_badinh" href="<?php l('badinh'); ?>"><?php p('Ba Đình'); ?></a></li>
 	<li><a id="goto_home" href="<?php l('home'); ?>"><?php p('Chào cờ'); ?></a></li>
 </ul>
 <div id="footer">
