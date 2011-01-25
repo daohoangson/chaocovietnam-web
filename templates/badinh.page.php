@@ -3,7 +3,7 @@
 	<p>
 		<?php p('Đoạn phim dưới đây được lấy từ báo Tuổi Trẻ (tuoitre.vn).'); ?>
 		<?php p('Lễ chào cờ ở Quảng trường Ba Đình được thực hiện vào 6 giờ sáng hàng ngày.'); ?>
-		<?php p('Trong tiếng Quốc ca hào hùng, lá cờ Tổ quốc được đội danh dự kéo lên, trung bay trước lăng Chủ tịch Hồ Chí Minh'); ?>
+		<?php p('Trong tiếng Quốc ca hào hùng, lá cờ Tổ quốc được đội danh dự kéo lên, tung bay trước lăng Chủ tịch Hồ Chí Minh'); ?>
 	</p>
 	<div class="embed vimeo">
 		<a name="vimeo"></a>
