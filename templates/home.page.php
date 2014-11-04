@@ -1,9 +1,9 @@
 <?php
 $roots = array(
 	'assets/' => 300,
-	'http://ponology.com/chaocovietnam/assets/' => 300,
+	// 'http://ponology.com/chaocovietnam/assets/' => 300,
 	// 'http://yega.game4v.vn/mrpaint/' => 30,
-	'http://halongvip.com/chaocovietnam/' => 15,
+	// 'http://halongvip.com/chaocovietnam/' => 15,
 );
 
 /* Determines $root */
