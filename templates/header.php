@@ -24,6 +24,7 @@
 	<?php endif; ?>
 	<script type="text/javascript" src="assets/chaocovietnam<?php if (empty($GLOBALS['config']['debug'])) echo '.min'; ?>.js"></script>
 	<link rel="stylesheet" type="text/css" href="assets/chaocovietnam<?php if (empty($GLOBALS['config']['debug'])) echo '.min'; ?>.css" /> 
+	<META property="SERVER" content="<?php echo gethostname(); ?>"/>
 </head>
 <body>
 <div id="above_content">
