@@ -96,9 +96,6 @@ $anthem['flash'] = $root . 'player.swf?file=' . urlencode($anthem['mp3']) . '&as
 	}
 	$(document).ready(setup);
 	</script>
-	<?php if (empty($GLOBALS['config']['debug'])): ?>
 	<div id="social">
-		<a href="http://twitter.com/share" class="twitter-share-button" data-url="http://chaocovietnam.net" data-text="Chào cờ Việt Nam!" data-count="horizontal" data-via="mrpaint">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
-		<iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fchaocovietnam.net&amp;layout=button_count&amp;show_faces=true&amp;width=450&amp;action=recommend&amp;font=verdana&amp;colorscheme=light&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:150px; height:21px;" allowTransparency="true"></iframe>
+		<script src="//go-socialcounters.appspot.com/js/all.js?url=https://chaocovietnam.net&amp;target=%23social"></script>
 	</div>
-	<?php endif; ?>

@@ -12,6 +12,8 @@
 	<META property="og:description" content="2 phút mỗi tuần"/>
 	<META property="og:type" content="activity"/>
 	<META property="og:image" content="http://chaocovietnam.net/assets/Vietnam_Flag.gif"/>
+	<META property="og:image:height" content="600"/>
+	<META property="og:image:width" content="900"/>
 	<META property="og:url" content="http://chaocovietnam.net/"/>
 	<META property="og:site_name" content="Chao Co Viet Nam"/>
 	<META property="fb:admins" content="2392950137,723610826"/>
