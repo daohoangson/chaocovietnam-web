@@ -10,7 +10,7 @@ $config = array(
 	),
 	'lang' => 'vi',
 	'pages' => array(),
-	'debug' => false, // please do not forget to minify js/css
+	'debug' => $_SERVER['SERVER_SOFTWARE'] === 'Development/2.0',
 	'rewrite' => true,
 	'contact_email' => 'lienhe@chaocovietnam.net',
 	'admin_email' => 'daohoangson@gmail.com',
@@ -20,11 +20,6 @@ $config = array(
 $runtime = array(
 	'lang' => $config['lang'],
 );
-
-// trick the url
-if (!empty($config['debug']) AND $_SERVER['HTTP_HOST'] != 'chaocovietnam.net') {
-	$config['url'] = 'http://' . $_SERVER['HTTP_HOST'] . '/chaocovietnam/';
-}
 
 // gets list of pages
 $dh = opendir(DIR . '/templates');
@@ -37,6 +32,18 @@ while ($file = readdir($dh)) {
 
 // processes our parametters
 $params = array();
+if (!empty($_SERVER['REQUEST_URI']) &&
+	$_SERVER['REQUEST_URI'][0] === '/' &&
+	substr($_SERVER['REQUEST_URI'], -4) === '.htm'
+) {
+	$parts = explode('/', preg_replace('#\.htm$#', '', $_SERVER['REQUEST_URI']), 3);
+	array_shift($parts);
+	if (isset($config['langs'][$parts[0]])) {
+		$runtime['lang'] = $parts[0];
+		array_shift($parts);
+	}
+	$params[implode('/', $parts)] = '';
+}
 foreach ($_GET as $key => $value) {
 	if (strlen($key) > 2 AND $key[2] == '/' AND isset($config['langs'][strtolower(substr($key,0,2))])) {
 		$runtime['lang'] = strtolower(substr($key,0,2));

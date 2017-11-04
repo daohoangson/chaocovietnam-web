@@ -24,6 +24,8 @@
 		foreach ($updated as $original => $translated) {
 			$phrases[$original] = $translated;
 		}
+
+		save_language($GLOBALS['runtime']['lang']);
 	}
 ?>
 <div class="message">

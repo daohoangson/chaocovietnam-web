@@ -14,24 +14,18 @@ function &load_language($lang = null, $sync = true) {
 	
 	if ($sync) {
 		$GLOBALS['phrases'] =& $phrases_sets[$lang];
-		register_shutdown_function('save_language');
 	} else {
-		
 		return $ref;
 	}
 	
 	return $ref;
 }
 
-function save_language() {
-	if (empty($GLOBALS['config']['debug'])) return; // do nothing in production mode
-	foreach ($GLOBALS['phrases_sets'] as $lang) {
-		if ($lang == $GLOBALS['config']['lang']) continue; // skip first language
-		$phrases =& load_language($lang, false);
-		$sorted = $phrases;
-		ksort($sorted);
-		file_put_contents(DIR . '/includes/language_' . $lang . '.php','<?php $phrases = ' . var_export($sorted, true) . ';');
-	}
+function save_language($lang) {
+	$phrases =& load_language($lang, false);
+	$sorted = $phrases;
+	ksort($sorted);
+	file_put_contents(DIR . '/output/language_' . $lang . '_' . time() . '.php','<?php $phrases = ' . var_export($sorted, true) . ';');
 }
 
 function t($text, $lang = null) {
