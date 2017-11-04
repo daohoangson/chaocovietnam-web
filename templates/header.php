@@ -2,7 +2,7 @@
 <html>
 <head>
 	<title><?php p('Chao co Viet Nam'); ?></title>
-	<base href="<?php echo $GLOBALS['config']['url']; ?>" />
+	<base href="<?php echo (empty($GLOBALS['config']['debug']) ? $GLOBALS['config']['url'] : '/'); ?>" />
 	<meta http-equiv="Content-type" content="text/html; charset=utf-8" /> 
 	<meta name="google-site-verification" content="2t30n9d1dmTB_73CXhi9Fm1SKBAIe6M1pMGIJEG8-KQ" />
 	<META NAME="keywords" content="Chao co, Viet Nam, Chào cờ, Việt Nam, Quốc kỳ, Quốc ca"> 
@@ -22,14 +22,9 @@
 		var $ = jQuery;
 	</script>
 	<?php endif; ?>
-	<script type="text/javascript" src="assets/chaocovietnam<?php if (empty($GLOBALS['config']['debug'])) echo '.min'; ?>.js"></script>
-	<link rel="stylesheet" type="text/css" href="assets/chaocovietnam<?php if (empty($GLOBALS['config']['debug'])) echo '.min'; ?>.css" /> 
+	<script type="text/javascript" src="assets/chaocovietnam.js"></script>
+	<link rel="stylesheet" type="text/css" href="assets/chaocovietnam.css" /> 
 	<META property="SERVER" content="<?php echo gethostname(); ?>"/>
 </head>
 <body>
-<div id="above_content">
-<?php if (!empty($GLOBALS['config']['debug'])): ?>
-<div id="debug">WARNING: RUNNING IN DEBUG MODE. PLEASE DO NOT FORGET TO TURN IT OFF!!!!</div>
-<?php endif; ?>
-</div>
 <div id="content">

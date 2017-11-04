@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+  gcloud:
+    build:
+      context: docker/gcloud
+    environment:
+      GCLOUD_CONTAINER_IP: 10.29.6.2
+    networks:
+      net10_29_6:
+        ipv4_address: 10.29.6.2
+    ports:
+      - "8000:8000"
+      - "8080:8080"
+    volumes:
+      - .:/var/www/html:ro
+
+networks:
+  net10_29_6:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 10.29.6.0/24
