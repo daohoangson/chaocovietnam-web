@@ -5,6 +5,7 @@
 	<base href="<?php echo (empty($GLOBALS['config']['debug']) ? $GLOBALS['config']['url'] : '/'); ?>" />
 	<meta http-equiv="Content-type" content="text/html; charset=utf-8" /> 
 	<meta name="google-site-verification" content="2t30n9d1dmTB_73CXhi9Fm1SKBAIe6M1pMGIJEG8-KQ" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<META NAME="keywords" content="Chao co, Viet Nam, Chào cờ, Việt Nam, Quốc kỳ, Quốc ca"> 
 	<META NAME="description" CONTENT="Chào cờ Việt Nam"> 
 	<META property="og:title" content="Chào cờ Việt Nam"/>
@@ -14,17 +15,11 @@
 	<META property="og:url" content="http://chaocovietnam.net/"/>
 	<META property="og:site_name" content="Chao Co Viet Nam"/>
 	<META property="fb:admins" content="2392950137,723610826"/>
-	<?php if (empty($GLOBALS['config']['debug'])): ?>
-	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
-	<?php else: ?>
-	<script type="text/javascript" src="assets/jquery.js"></script>
-	<script type="text/javascript">
-		var $ = jQuery;
-	</script>
-	<?php endif; ?>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 	<script type="text/javascript" src="assets/chaocovietnam.js"></script>
 	<link rel="stylesheet" type="text/css" href="assets/chaocovietnam.css" /> 
 	<META property="SERVER" content="<?php echo gethostname(); ?>"/>
 </head>
 <body>
-<div id="content">
+<div class="container">
+	<div id="content">

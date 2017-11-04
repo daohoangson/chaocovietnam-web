@@ -1,5 +1,6 @@
 
-</div><!-- #content -->
+	</div><!-- #content -->
+</div><!-- .container -->
 <div id="below_content">
 <ul class="menu page_<?php echo $GLOBALS['displayed']; ?>">
 	<?php
@@ -28,9 +29,6 @@
 	</div>
 </div>
 </div>
-<script type="text/javascript">
-$(document).ready(fitContent);
-</script>
 <?php if (empty($GLOBALS['config']['debug'])) : ?>
 <script type="text/javascript">
 

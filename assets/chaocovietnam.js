@@ -207,10 +207,9 @@ function scaleFlag(min) {
 	var ofH = $f.height();
 	$w.resize(function() {
 		var newfH = Math.min(ofH,Math.max(min,$w.height() - ($p.height() - $f.height())));
-		var newfW = Math.min(ofW,Math.max(min,$w.width()));
+		var newfW = Math.min(ofW,Math.max(min,$p.width()));
 		if (newfH/ofH < newfW/ofW) newfW = Math.floor(newfH/ofH*ofW); else newfH = Math.floor(newfW/ofW*ofH);
 		$f.css('width',newfW).css('height',newfH);
-		$f.resize();
 	});
 	$w.resize();
 }
@@ -219,6 +218,11 @@ function scaleFlag(min) {
  * Displays the subscribe form
 **/
 function setupSubscribe() {
+	if (!window.requestAnimationFrame) {
+		return;
+	}
+
+	var raf = window.requestAnimationFrame;
 	var $sf = $('#subscribe_simple');
 	var w = $sf.width();
 	var w3 = -1 * w;
@@ -230,29 +234,11 @@ function setupSubscribe() {
 		if (e.target.tagName && e.target.tagName.toLowerCase() == 'input') return;
 		if (parseInt($sf.css('left')) != w3) $sf.animate({left: w3},'fast'); else $sf.animate({left: 0},'fast');
 	});
-	$(window).scroll(function() {
-		var nTop = Math.floor(($(window).height() - $sf.height())/2) + $(window).scrollTop();
-		var top = parseInt($sf.css('top'));
-		if (Math.abs(nTop - top) > 100) {
-			$sf.css('top',nTop);
-		}
-	});
-	$(window).scroll();
-}
 
-/**
- * Make sure the #content is fit the whole window
-**/
-function fitContent() {
-	var $w = $(window);
-	var owh = $w.height();
-	var a = owh - $('body').height();
-	var $c = $('#content');
-	var oh = $c.height();
-	if (a > 0) {
-		$w.resize(function() {
-			$c.css('min-height',oh + ($w.height() - owh) + a);
-		});
-		$w.resize();
-	}
+	var doPosition = function() {
+		var top = Math.floor(($(window).height() - $sf.height())/2) + $(window).scrollTop();
+		$sf.css('top',top + 'px');
+		raf(doPosition);
+	};
+	doPosition();
 }
