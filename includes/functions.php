@@ -31,6 +31,10 @@ function l($page, $return = false, $lang = null, $options = array()) {
 	}
 }
 
+function version_hash() {
+	return substr(md5($_SERVER['CURRENT_VERSION_ID']), 0, 6);
+}
+
 function display($page,$variables = array()) {
 	extract($variables);
 	require(DIR . '/templates/' . $page . '.page.php');

@@ -59,7 +59,7 @@ div.download {
 		display: block;
 	}
 	.download a {
-		background: url(icon-download.gif) top left no-repeat;
+		background: url(/assets/icon-download.gif) top left no-repeat;
 		color: #00F;
 		height: 16px;
 		text-decoration: none;
@@ -158,7 +158,7 @@ a.copyright {
 /* Subscribe */
 #subscribe_simple {
 	display: none;
-	background: url(btn-side.png) center right no-repeat;
+	background: url(/assets/btn-side.png) center right no-repeat;
 	width: 350px;
 	padding: 0 35px 0 0;
 }

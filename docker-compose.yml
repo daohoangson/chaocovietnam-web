@@ -14,7 +14,9 @@ services:
       - "8080:8080"
     volumes:
       - .:/var/www/html:ro
-      - ./.data/ccvn:/var/www/html/output
+      - ./.data/minified:/var/www/html/assets/minified
+      - ./.data/gcloud:/root/.config
+      - ./.data/output:/var/www/html/output
 
 networks:
   net10_29_6:

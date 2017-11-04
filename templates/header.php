@@ -2,7 +2,7 @@
 <html>
 <head>
 	<title><?php p('Chao co Viet Nam'); ?></title>
-	<base href="<?php echo (empty($GLOBALS['config']['debug']) ? $GLOBALS['config']['url'] : '/'); ?>" />
+	<base href="/" />
 	<meta http-equiv="Content-type" content="text/html; charset=utf-8" /> 
 	<meta name="google-site-verification" content="2t30n9d1dmTB_73CXhi9Fm1SKBAIe6M1pMGIJEG8-KQ" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,8 +18,8 @@
 	<META property="og:site_name" content="Chao Co Viet Nam"/>
 	<META property="fb:admins" content="2392950137,723610826"/>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-	<script type="text/javascript" src="assets/chaocovietnam.js"></script>
-	<link rel="stylesheet" type="text/css" href="assets/chaocovietnam.css" /> 
+	<script type="text/javascript" src="assets/<?php if (empty($GLOBALS['config']['debug'])) echo 'minified/'; ?>chaocovietnam.js<?php if (empty($GLOBALS['config']['debug'])) echo '?' . version_hash(); ?>"></script>
+	<link rel="stylesheet" type="text/css" href="assets/<?php if (empty($GLOBALS['config']['debug'])) echo 'minified/'; ?>chaocovietnam.css<?php if (empty($GLOBALS['config']['debug'])) echo '?' . version_hash(); ?>" /> 
 	<META property="SERVER" content="<?php echo gethostname(); ?>"/>
 </head>
 <body>
