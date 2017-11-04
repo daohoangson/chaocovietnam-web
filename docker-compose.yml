@@ -14,6 +14,7 @@ services:
       - "8080:8080"
     volumes:
       - .:/var/www/html:ro
+      - ./.data/ccvn:/var/www/html/output
 
 networks:
   net10_29_6:
