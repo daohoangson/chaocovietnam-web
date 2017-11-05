@@ -1,4 +1,20 @@
 <?php
+
+if (isset($params['email']) &&
+	isset($params['h']) == 'h' &&
+	strlen($params['h']) == 32
+) {
+	require_once(DIR . '/includes/functions_subscribe.php');
+	$emails = load_emails();
+	if (isset($emails[$params['email']])) {
+		$emailRef =& $emails[$params['email']];
+		if (isset($emailRef['sent'][$params['h']])) {
+			$emailRef['sent'][$params['h']]['clicked'] = time();
+			save_emails($emails);
+		}
+	}
+}
+
 $roots = array(
 	'assets/' => 300,
 	// 'http://ponology.com/chaocovietnam/assets/' => 300,

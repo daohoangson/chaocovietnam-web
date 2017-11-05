@@ -5,7 +5,11 @@ services:
     build:
       context: docker/gcloud
     environment:
-      GCLOUD_CONTAINER_IP: 10.29.6.2
+      - GCLOUD_CONTAINER_IP=10.29.6.2
+      - GCLOUD_SMTP_USER
+      - GCLOUD_SMTP_PASSWORD
+    extra_hosts:
+      - "ccvn.local.hoangson.vn:10.29.6.2"
     networks:
       net10_29_6:
         ipv4_address: 10.29.6.2

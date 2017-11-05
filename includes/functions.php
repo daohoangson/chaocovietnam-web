@@ -31,6 +31,14 @@ function l($page, $return = false, $lang = null, $options = array()) {
 	}
 }
 
+function storage_path($relativePath = '') {
+	return sprintf(
+		'gs://%s/%s',
+		\google\appengine\api\cloud_storage\CloudStorageTools::getDefaultGoogleStorageBucketName(),
+		$relativePath
+	);
+}
+
 function version_hash() {
 	return substr(md5($_SERVER['CURRENT_VERSION_ID']), 0, 6);
 }

@@ -13,6 +13,10 @@ handlers:
   static_files: sitemap.xml
   upload: sitemap.xml
 
+- url: /tasks/send_emails
+  script: sylvierocks.php
+  login: admin
+
 - url: /.*
   script: index.php
   secure: always
