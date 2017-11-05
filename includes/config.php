@@ -2,7 +2,7 @@
 define('DIR',dirname(dirname(__FILE__)));
 
 $config = array(
-	'version' => 'demo',
+	'version' => '2.0',
 	'url' => 'https://chaocovietnam.net/',
 	'langs' => array(
 		'vi' => 'Tiếng Việt',

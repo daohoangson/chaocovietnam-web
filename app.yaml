@@ -23,5 +23,6 @@ handlers:
 
 skip_files:
   - .data/
+  - .git/
   - docker/
   - output/
