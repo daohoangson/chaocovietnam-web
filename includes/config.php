@@ -14,8 +14,6 @@ $config = array(
 	'rewrite' => true,
 	'contact_email' => 'lienhe@chaocovietnam.net',
 	'admin_email' => 'daohoangson@gmail.com',
-	'system_email' => 'xinchao@chaocovietnam.net',
-	'cc_email' => 'hotro@chaocovietnam.net',
 );
 $runtime = array(
 	'lang' => $config['lang'],

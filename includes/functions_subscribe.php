@@ -11,12 +11,14 @@ function save_emails($emails) {
 
 function ccvn_mail($to, $subject, $message) {
 	file_put_contents(DIR . '/datastore/emails.log', date('r') . "\t$to\t$subject\n",FILE_APPEND);
-	
+
+	$from = sprintf(
+		\google\appengine\runtime\Mail::DEFAULT_SENDER_ADDRESS_FORMAT,
+		\google\appengine\api\app_identity\AppIdentityService::getApplicationId()
+	);
+
 	$headers = '';
-	$headers = "From: {$GLOBALS['config']['system_email']}\r\n";
-	if (!empty($GLOBALS['config']['cc_email'])) {
-		$headers .= "CC: {$GLOBALS['config']['cc_email']}\r\n";
-	}
+	$headers = "From: {$from}\r\n";
 	$headers .= "MIME-Version: 1.0\r\n";
 	$headers .= "Content-Type: text/html; charset=UTF-8\r\n";
 	return mail($to, '[CHAOCOVIETNAM] ' . $subject, $message, $headers);
