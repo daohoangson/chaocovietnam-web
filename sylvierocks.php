@@ -1,44 +1,53 @@
 <?php
-	define('MIN_HOWLONG',12*60*60); // half a day
 	define('MAX_IGNORED',2); // 2 ignored and bye
 	define('MAX_SENT',5); // keeps logs of 5 last mails
+	define('MIN_INTERVAL', 6 * 86400); // 6 days
+	define('DAY_OF_WEEK', 1); // ISO-8601 Monday
 ?>
 Hi. I'm the subscriber's email script...<br/>
 <?php require('./includes/config.php'); ?>
 Loaded configuration<br/>
 <?php require_once(DIR . '/includes/functions_subscribe.php'); ?>
 Loaded subscribe functions<br/>
+<?php
+	if (ccvn_date('N') != DAY_OF_WEEK) {
+		die('Halting, reason: DAY_OF_WEEK');
+	}
+?>
 <?php $emails = load_emails(); ?>
+<?php $totalSent = isset($emails['total_sent']) ? $emails['total_sent'] : 0; ?>
 Loaded emails<br/>
-<?php $lastran = intval(@$emails['lastran']); $howlong = time() - $lastran; ?>
-Seconds from last ran = <?php echo $howlong; ?><br/>
-<?php if (empty($GLOBALS['config']['debug']) AND $howlong < MIN_HOWLONG): ?>
-Too fast. Bye!
-<?php exit; endif; ?>
 <?php 
 	$i = 0;
-	$removes = array();
 	foreach ($emails as $email => &$conf):
 		if (substr_count($email,'@') != 1) continue;
 ?>
 (<?php echo ++$i; ?>) Processing <?php echo $email; ?><br/>
 <?php
 	$ignored = 0;
+	$lastSent = 0;
 	foreach ($conf['sent'] as $hash => $sent) {
 		if (empty($sent['clicked'])) $ignored++; else $ignored = 0; // only checks for continuous ignores
+		$lastSent = $sent['datetime'];
 	}
+	$interval = time() - $lastSent;
+	if (MIN_INTERVAL > 0 AND $interval < MIN_INTERVAL):
+?>
+<div style="color: red">Just sent recently (<?php echo $interval; ?> seconds ago), skipped sending for now...</div>
+<?php
+		continue;
+	endif;
 	if (MAX_IGNORED > 0 AND $ignored >= MAX_IGNORED):
 ?>
 <div style="color: red">Ignored <?php echo $ignored; ?>, skipped sending more...</div>
 <?php
-		$removes[] = $email;
 		continue;
 	endif;
 	// sending mails
 	$hash = md5($email . $conf['total_sent']);
 	$lang = $conf['lang'];
 	$link = l('home',true,$lang,array('full' => true,'params' => array('email' => $email, 'h' => $hash)));
-	$subject = t('Thu moi ngay %1$s',$lang,ccvn_date('d-m-Y'));
+	$subject = t('Chao co buoi sang ngay %1$s',$lang,ccvn_date('d/m'));
 	
 	$name = t('Chào Cờ Việt Nam',$lang);
 	$staff = t('Ban quản trị %1$s',$lang,$name);
@@ -61,7 +70,7 @@ Too fast. Bye!
 			,$lang
 			,$name
 			,$conf['IP']
-			,date('r',$conf['subscribed'])
+			,ccvn_date('H:i:s d-m-Y',$conf['subscribed'])
 			,MAX_IGNORED
 			,$GLOBALS['config']['contact_email']),
 	);
@@ -89,6 +98,10 @@ Email was sent successfully.<br/>
 			'datetime' => time(),
 		);
 		$conf['total_sent']++;
+		if (!isset($emails['total_sent'])) {
+			$emails['total_sent'] = 0;
+		}
+		$emails['total_sent']++;
 	} else {
 ?>
 <div style="color: red">Email couldn't be sent.</div>
@@ -99,14 +112,9 @@ Email was sent successfully.<br/>
 	}
 ?>
 <?php endforeach; ?>
-<?php if (false): ?>
-<?php foreach ($removes as $email): ?>
-Removing <?php echo $email; ?><br/>
-<?php unset($emails[$email]); ?>
-<?php endforeach; ?>
-<?php endif; ?>
 <?php
-	$emails['lastran'] = time();
-	save_emails($emails);
+	if (isset($emails['total_sent']) && $emails['total_sent'] > $totalSent) {
+		save_emails($emails);
+	}
 ?>
 Finished. Cya!

@@ -31,6 +31,12 @@ function l($page, $return = false, $lang = null, $options = array()) {
 	}
 }
 
+function ccvn_date($format, $timestamp = null) {
+	if ($timestamp === null) $timestamp = time();
+	$timestamp += 25200;
+	return gmdate($format,$timestamp);
+}
+
 function storage_path($relativePath = '') {
 	return sprintf(
 		'gs://%s/%s',

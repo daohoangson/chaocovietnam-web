@@ -23,6 +23,7 @@ function ccvn_mail($to, $subject, $htmlBody) {
 		$message = new \google\appengine\api\mail\Message();
 		$message->setSender($sender);
 		$message->addTo($to);
+		$message->addCc($GLOBALS['config']['contact_email']);
 		$message->setHtmlBody($htmlBody);
 		$message->setReplyTo($GLOBALS['config']['contact_email']);
 		$message->setSubject($subject);
@@ -39,10 +40,4 @@ function ccvn_mail($to, $subject, $htmlBody) {
 	}
 
 	return false;
-}
-
-function ccvn_date($format, $timestamp = null) {
-	if ($timestamp === null) $timestamp = time();
-	$timestamp += 25200 - date('Z');
-	return date($format,$timestamp);
 }

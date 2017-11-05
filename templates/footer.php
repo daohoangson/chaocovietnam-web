@@ -19,7 +19,7 @@
 	<li><a id="goto_home" href="<?php l('home'); ?>"><?php p('Chào cờ'); ?></a></li>
 </ul>
 <div id="footer">
-	<div><?php p('Chào Cờ Việt Nam'); ?><sup><?php echo $GLOBALS['config']['version']; ?></sup> <?php echo date('Y'); ?></div>
+	<div><?php p('Chào Cờ Việt Nam'); ?><sup><?php echo $GLOBALS['config']['version']; ?></sup> <?php echo ccvn_date('Y'); ?></div>
 	<div>
 		<a href="<?php l('home'); ?>"><?php p('Trang chủ'); ?></a>
 		<a href="<?php l('subscribe'); ?>"><?php p('Chào cờ hàng tuần'); ?></a>
