@@ -5,6 +5,19 @@ handlers:
 - url: /assets
   static_dir: assets
 
+- url: /favicon.ico
+  static_files: favicon.ico
+  upload: favicon.ico
+
+- url: /sitemap.xml
+  static_files: sitemap.xml
+  upload: sitemap.xml
+
 - url: /.*
   script: index.php
   secure: always
+
+skip_files:
+  - .data/
+  - docker/
+  - output/
